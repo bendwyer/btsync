@@ -44,14 +44,15 @@ Open `btsync.conf` for editing.
 sudo nano /etc/btsync/btsync.conf
 ```
 ### Basic Preferences
-Uncomment lines by deleting the `//` at the beginning of each line.<br>
-`device_name` - what you want to call your Sync device<br>
-`storage_path` - change to `/var/lib/btsync/` and **uncomment**<br>
-`pid_file` - change to `/var/lib/btsync/btsync.pid` and **uncomment**<br>
-`use_upnp` - change to `false`<br>
-`login` - change to what you want your username to be and **uncomment**<br>
+Uncomment lines by deleting the `//` at the beginning of each line.
+
+`device_name` - what you want to call your Sync device.<br>
+`storage_path` - change to `/var/lib/btsync/` and **uncomment**.<br>
+`pid_file` - change to `/var/lib/btsync/btsync.pid` and **uncomment**.<br>
+`use_upnp` - change to `false`.<br>
+`login` - change to what you want your username to be and **uncomment**.<br>
 `password_hash` - change to what you want your hashed password to be and **uncomment**. See below for more information.<br>
-`directory_root` - change to `/sync-encrypted/` and **uncomment**<br>
+`directory_root` - change to `/sync-encrypted/` and **uncomment**.<br>
 >#### Sidenote: `password_hash`
 To make a hashed password for `btsync.conf`, you have to use `crypt(3)`. This method definitely has its limitations, but at least your password isn't stored in plaintext.<br>
 ```
@@ -60,9 +61,18 @@ mkpasswd
 After running the above command, you'll be prompted for a password. Type/paste your preferred password in, and press `Enter`. If your password is above 8 characters, you'll get a warning about it only accepting the first 8 characters. Copy the output and paste it into the `password_hash` line.
 
 ### Advanced preferences
-These exist at the very bottom of the `btsync.conf` file. If you don't get the syntax right for the options in this section, `btsync` won't start properly.
+These exist at the very bottom of `btsync.conf`. 
 
-Add your options below `//, "folder_rescan_interval" : "86400"` and above `}`. It should look something like this:
+If you don't get the syntax right for the options in this section, `btsync` won't start properly. 
+
+These options have to be explicitly set in `btsync.conf` - changing them through the WebUI requires a restart, and after the restart those settings are lost.
+
+Add your options below<br>
+`//, "folder_rescan_interval" : "86400"`<br>
+and above<br>
+`}`
+
+It should look something like this:
 ```
 //, "folder_rescan_interval" : "86400"
   , "folder_defaults.use_relay" : false
