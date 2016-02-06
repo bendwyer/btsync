@@ -21,7 +21,7 @@ Across all of my Sync devices (home and public) I have turned off `use_relay`, `
 `/sync-encrypted` - location for storing encrypted sync folders<br>
 
 ## Getting Started
-On your fresh Ubuntu Server install, run `wget`:<br>
+On your fresh Ubuntu Server install, run `wget` and download `install-btsync.sh`:<br>
 ```
 wget https://raw.githubusercontent.com/bendwyer/btsync/master/install-btsync.sh
 ```
@@ -61,11 +61,10 @@ mkpasswd
 After running the above command, you'll be prompted for a password. Type/paste your preferred password in, and press `Enter`. If your password is above 8 characters, you'll get a warning about it only accepting the first 8 characters. Copy the output and paste it into the `password_hash` line.
 
 ### Advanced preferences
-These exist at the very bottom of `btsync.conf`. 
-
-If you don't get the syntax right for the options in this section, `btsync` won't start properly. 
-
-These options have to be explicitly set in `btsync.conf` - changing them through the WebUI requires a restart, and after the restart those settings are lost.
+- These exist at the very bottom of `btsync.conf`. 
+- If you don't get the syntax right for the options in this section, `btsync` won't start properly. 
+- These options have to be explicitly set in `btsync.conf` - changing them through the WebUI requires a restart, and after the restart those settings are lost. 
+  - I'm not sure why, but I think it's because of the way `btsync` and `btsync.conf` are being called, they are overwriting changes made to the `Power User` options through the WebUI.
 
 Add your options below<br>
 `//, "folder_rescan_interval" : "86400"`<br>
@@ -80,7 +79,43 @@ It should look something like this:
   , "folder_defaults.use_lan_broadcast" : false
 //, "folder_defaults.delete_to_trash" : false
   , "send_statistics" : false
-  , "folder_defaults.known_hosts" : "server.domain.tld:port#,server2.domain2.tld2:port#"
+  , "folder_defaults.known_hosts" : "server1.domain1.tld1:port#,server2.domain2.tld2:port#"
 }
 ```
-Leave `folder_rescan_interval` commented out.
+- I left `folder_rescan_interval` commented out.<br>
+- I've turned `folder_defaults.use_lan_broadcast` off for all my devices except my "home" server. There's no reason for it to be enabled on a public server. I also have it disabled on my laptop, but that's because I'm using `folder_defaults.known_hosts` for all my Sync devices, negating the need for LAN broadcast discovery.
+- For my private Sync devices, I leave `folder_defaults.delete_to_trash` set to `false`. For my public Sync devices (like an Azure VM), I leave it set to the default, `true`, which is why it's commented out here.<br>
+- I've turned off `send_statistics` for all my Sync devices. While BitTorrent Sync states nothing persinally identifiable is collected, I'm not keen on leaving it on.<br>
+- The `folder_defaults.known_hosts` option requires that the list of servers be comma separated with **no spaces**. On my laptop, I've included both a local and public address for my "home" server since all other methods of discovery are disabled.<br>
+- More information on the available options for this section can be found here: http://help.getsync.com/hc/en-us/articles/207371636-Power-user-preferences
+
+## Run `btsync` as `root`
+Switch to `root`.
+```
+sudo -i
+```
+Add `/usr/local/bin/btsync` to `PATH` environment variable.
+```
+export PATH=$PATH:/usr/local/bin/btsync
+```
+Start `btsync`.
+```
+btsync --config /etc/btsync/btsync.conf --log /var/log/btsync.log
+```
+`btsync` should start successfully and specify a PID.
+```
+```
+Stop `btsync`.
+```
+killall btsync
+```
+Exit `root`.
+```
+exit
+```
+
+## Change Ownership of files
+Run `wget` and download `chown-btsync.sh`:<br>
+```
+wget https://raw.githubusercontent.com/bendwyer/btsync/master/chown-btsync.sh
+```
