@@ -23,7 +23,8 @@ Across all of my Sync devices (home and public) I have turned off `use_relay`, `
 
 ---
 #### Sidenote: `btsync.conf`
-I will reference two versions of `btsync.conf` in this README. Only the **Upstart** configuration file is available to download from this repo. The **BitTorrent Sync** configuration file has to be created and edited by hand. For the sake of clarity, I will reiterate the locations of the two files:<br>
+I will reference two versions of `btsync.conf` in this README. Only the **Upstart** configuration file is available to download from this repo. The **BitTorrent Sync** configuration file has to be created and edited by hand. For the sake of clarity, I will reiterate the locations of the two files:
+
 **BitTorrent Sync**
 ```
 /etc/btsync/btsync.conf
