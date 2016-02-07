@@ -226,3 +226,6 @@ http://meltingice.net/2015/07/27/how-to-run-bittorrent-sync-on-aws/
 
 - BitTorrent Sync Help - Power User Preferences<br>
 http://help.getsync.com/hc/en-us/articles/207371636-Power-user-preferences
+
+- "btsync-upstart.conf" by Martin Gehrke<br>
+https://gist.github.com/martingehrke/03223e0c78e70423ede4
