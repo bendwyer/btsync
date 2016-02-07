@@ -175,9 +175,9 @@ Check that the `btsync` executable is running as user `btsync`.
 ```
 ps -ef | grep btsync | grep -v grep
 ```
-The output should look something like this:
+The output should look something like this (scroll right for the rest):
 ```
-
+btsync    963   1  0 00:39 ?    00:00:01 /usr/local/bin/btsync/btsync --config /etc/btsync/btsync.conf --log /var/log/btsync.log
 ```
 Reboot the server to test if `btsync` autostarts.
 ```
@@ -204,3 +204,12 @@ When a new version of BitTorrent Sync is available, execute `update-btsync.sh`.
 ```
 sudo ./update-btsync.sh
 ```
+
+## Sources
+- Vincent Seow - https://seowsource.com/set-up-bittorrent-sync-on-your-linux-server
+- Florian Knapp - https://nerd.one/bittorrent-sync-auf-uberspace
+- Gabriel Cánepa - http://xmodulo.com/share-files-between-computers-over-network.html
+- Adam Sommer - http://codepen.io/asommer70/post/bittorrent-sync-on-ubuntu-server-from-scratch
+- Viktor Petersson - https://www.cloudsigma.com/how-to-securely-use-bittorrent-sync-for-backups
+- Ryan Lefevre - http://meltingice.net/2015/07/27/how-to-run-bittorrent-sync-on-aws
+- BitTorrent Sync Help - http://help.getsync.com/hc/en-us/articles/207371636-Power-user-preferences
