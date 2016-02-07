@@ -204,6 +204,15 @@ When a new version of BitTorrent Sync is available, execute `update-btsync.sh`.
 ```
 sudo ./update-btsync.sh
 ```
+`update-btsync.sh` performs the following tasks:<br>
+1. Navigates to the folder that holds the `btsync` executable.<br>
+2. Stops the `btsync` service.<br>
+3. Creates a backup of the current `btsync` executable by renaming it with a timestamp.<br>
+4. Downloads the new build.<br>
+5. Extracts the archive.<br>
+6. Removes the archive.<br>
+7. Changes ownership of `/usr/local/bin/btsync` recursively so that the new `btsync` executable is owned by the `btsync` user.<br>
+8. Starts the `btsync` service.<br>
 
 ## Sources
 - "Set up BitTorrent Sync on your Linux Server" by Vincent Seow<br>
