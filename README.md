@@ -48,7 +48,7 @@ If you're curious about what `install-btsync.sh` does, feel free to open it and 
 ```
 sudo nano install-btsync.sh
 ```
-I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out.
+I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out. Remove the `#` to enable the self-delete command.
 ```
 # delete this script when complete
 #rm install-btsync.sh
