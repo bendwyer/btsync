@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# delete this script when complete
+#rm install-btsync.sh
+
 # make /btsync dir for downloading tar.gz
 mkdir /usr/local/bin/btsync
 
