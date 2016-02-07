@@ -8,8 +8,8 @@ Instructions and scripts for setting up BitTorrent Sync on Ubuntu Server.
 [Getting Started](#getting-started)<br>
 [Edit `btsync.conf`](#edit-btsyncconf)<br>
 [Run `btsync` as `root`](#run-btsync-as-root)<br>
-[Change Ownership of Files](#change-ownership-of-files)
-[Making `btsync` Autostart (Upstart)](#making-btsync-autostart-upstart)
+[Change Ownership of Files](#change-ownership-of-files)<br>
+[Making `btsync` Autostart (Upstart)](#making-btsync-autostart-upstart)<br>
 [Updating `btsync` Automatically](#updating-btsync-automatically)
 
 ## Disclaimers
