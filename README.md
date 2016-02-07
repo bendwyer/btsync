@@ -21,9 +21,9 @@ Across all of my Sync devices (home and public) I have turned off `use_relay`, `
 `/sync-encrypted` - location for storing encrypted sync folders.<br>
 `/etc/init` - location for the **Upstart** configuration file `btsync.conf`.<br>
 
->#### Sidenote: `btsync.conf`
+---
+#### Sidenote: `btsync.conf`
 I will reference two versions of `btsync.conf` in this README. Only the **Upstart** configuration file is available to download from this repo. The **BitTorrent Sync** configuration file has to be created and edited by hand. For the sake of clarity, I will reiterate the locations of the two files:<br>
-<br>
 **BitTorrent Sync**
 ```
 /etc/btsync/btsync.conf
@@ -32,6 +32,7 @@ I will reference two versions of `btsync.conf` in this README. Only the **Upstar
 ```
 /etc/init/btsync.conf
 ```
+---
 
 ## Getting Started
 On your fresh Ubuntu Server install, run `wget` and download `install-btsync.sh`:<br>
