@@ -19,6 +19,7 @@ Across all of my Sync devices (home and public) I have turned off `use_relay`, `
 `/etc/btsync` - location for the `btsync.conf` configuration file<br>
 `/var/lib/btsync` - location for the `storage_path` option in `btsync.conf`; also where `btsync.pid` will be stored <br>
 `/sync-encrypted` - location for storing encrypted sync folders<br>
+`/etc/init` - location for the `btsync.conf` Upstart file
 
 ## Getting Started
 On your fresh Ubuntu Server install, run `wget` and download `install-btsync.sh`:<br>
