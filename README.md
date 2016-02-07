@@ -51,7 +51,7 @@ sudo nano install-btsync.sh
 
 Execute `install-btsync.sh`
 ```
-sudo ./install-btsync.sh
+sudo sh install-btsync.sh
 ```
 Examine the output and make sure that there aren't any errors. When I ran `install-btsync.sh` on my Azure VM, I did receive warnings about not being able to set a password and group for the created user `btsync`. The user account created successfuly in spite of this, so I kept going.
 
@@ -149,7 +149,7 @@ sudo nano chown-btsync.sh
 
 Execute `chown-btsync.sh`
 ```
-sudo ./chown-btsync.sh
+sudo sh chown-btsync.sh
 ```
 
 ## Making `btsync` Autostart (Upstart)
@@ -202,7 +202,7 @@ sudo nano update-btsync.sh
 
 When a new version of BitTorrent Sync is available, execute `update-btsync.sh`.
 ```
-sudo ./update-btsync.sh
+sudo sh update-btsync.sh
 ```
 `update-btsync.sh` performs the following tasks:<br>
 1. Navigates to the folder that holds the `btsync` executable.<br>
