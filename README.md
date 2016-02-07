@@ -45,17 +45,20 @@ Make `install-btsync.sh` executable.
 chmod +x install-btsync.sh
 ```
 
->#### Sidenote: `install-btsync.sh`
+---
+#### Sidenote: `install-btsync.sh`
 If you're curious about what `install-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
 ```
 sudo nano install-btsync.sh
 ```
-I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out. Remove the `#` to enable the self-delete command.
+I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out. Remove the `#` to enable the self-delete command. <br>
 ```
 # delete this script when complete
 #rm install-btsync.sh
 ```
 `install-btsync.sh` can mess up an in-progress install of BitTorrent Sync if it is accidentally run a second time. For this reason I highly recommend deleting it (either manually or automatically) after it has been run the first time.
+
+---
 
 Execute `install-btsync.sh`
 ```
@@ -78,12 +81,16 @@ Uncomment lines by deleting the `//` at the beginning of each line.
 `login` - change to what you want your username to be and **uncomment**.<br>
 `password_hash` - change to what you want your hashed password to be and **uncomment**. See below for more information.<br>
 `directory_root` - change to `/sync-encrypted/` and **uncomment**.<br>
->#### Sidenote: `password_hash`
+
+---
+#### Sidenote: `password_hash`
 To make a hashed password for `btsync.conf`, you have to use `crypt(3)`. This method definitely has its limitations, but at least your password isn't stored in plaintext.<br>
 ```
 mkpasswd
 ```
 After running the above command, you'll be prompted for a password. Type/paste your preferred password in, and press `Enter`. If your password is above 8 characters, you'll get a warning about it only accepting the first 8 characters. Copy the output and paste it into the `password_hash` line.
+
+---
 
 ### Advanced Preferences
 - These exist at the very bottom of `btsync.conf`. 
@@ -149,11 +156,13 @@ Make `chown-btsync.sh` executable.
 chmod +x chown-btsync.sh
 ```
 
->#### Sidenote: `chown-btsync.sh`
+---
+#### Sidenote: `chown-btsync.sh`
 If you're curious about what `chown-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
 ```
 sudo nano chown-btsync.sh
 ```
+---
 
 Execute `chown-btsync.sh`
 ```
@@ -170,7 +179,8 @@ Make `autostart-btsync.sh` executable.
 chmod +x autostart-btsync.sh
 ```
 
->#### Sidenote: `autostart-btsync.sh`
+---
+#### Sidenote: `autostart-btsync.sh`
 If you're curious about what `autostart-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
 ```
 sudo nano autostart-btsync.sh
@@ -182,6 +192,7 @@ wget https://raw.githubusercontent.com/bendwyer/btsync/master/btsync.conf
 ```
 sudo nano btsync.conf
 ```
+---
 
 Execute `autostart-btsync.sh`
 ```
@@ -210,11 +221,13 @@ Make `update-btsync.sh` executable.
 chmod +x update-btsync.sh
 ```
 
->#### Sidenote: `update-btsync.sh`
+---
+#### Sidenote: `update-btsync.sh`
 If you're curious about what `update-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
 ```
 sudo nano update-btsync.sh
 ```
+---
 
 When a new version of BitTorrent Sync is available, execute `update-btsync.sh`.
 ```
