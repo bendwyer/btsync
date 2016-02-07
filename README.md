@@ -187,7 +187,7 @@ sudo reboot now
 ## Updating `btsync` Automatically
 Run `wget` and download `update-btsync.sh`:<br>
 ```
-wget 
+wget https://raw.githubusercontent.com/bendwyer/btsync/master/update-btsync.sh
 ```
 Make `update-btsync.sh` executable.
 ```
@@ -200,7 +200,7 @@ If you're curious about what `update-btsync.sh` does, feel free to open it and t
 sudo nano update-btsync.sh
 ```
 
-Execute `update-btsync.sh`
+When a new version of BitTorrent Sync is available, execute `update-btsync.sh`.
 ```
 sudo ./update-btsync.sh
 ```
