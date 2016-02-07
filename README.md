@@ -15,11 +15,23 @@ While my "home" devices are linked together via `My Devices` in BitTorrent Sync,
 Across all of my Sync devices (home and public) I have turned off `use_relay`, `use_tracker`, and `send_statistics` in BitTorrent Sync folder defaults, utilizing only `known_hosts`. Additionally, `use_upnp` is set to `false` for all my devices.
 
 ## File Locations
-`/usr/local/bin/btsync` - location for downloading, extracting, and storing the `btsync` executable<br>
-`/etc/btsync` - location for the `btsync.conf` configuration file<br>
-`/var/lib/btsync` - location for the `storage_path` option in `btsync.conf`; also where `btsync.pid` will be stored <br>
-`/sync-encrypted` - location for storing encrypted sync folders<br>
-`/etc/init` - location for the `btsync.conf` Upstart file
+`/usr/local/bin/btsync` - location for downloading, extracting, and storing the `btsync` executable.<br>
+`/etc/btsync` - location for the **BitTorrent Sync** configuration file `btsync.conf`.<br>
+`/var/lib/btsync` - location for the `storage_path` option in `btsync.conf`; also where `btsync.pid` will be stored.<br>
+`/sync-encrypted` - location for storing encrypted sync folders.<br>
+`/etc/init` - location for the **Upstart** configuration file `btsync.conf`.<br>
+
+>#### Sidenote: `btsync.conf`
+I will reference two versions of `btsync.conf` in this README. Only the **Upstart** configuration file is available to download from this repo. The **BitTorrent Sync** configuration file has to be created and edited by hand. For the sake of clarity, I will reiterate the locations of the two files:<br>
+<br>
+**BitTorrent Sync**
+```
+/etc/btsync/btsync.conf
+```
+**Upstart**
+```
+/etc/init/btsync.conf
+```
 
 ## Getting Started
 On your fresh Ubuntu Server install, run `wget` and download `install-btsync.sh`:<br>
@@ -141,7 +153,17 @@ sudo ./chown-btsync.sh
 ```
 
 ## Making `btsync` Autostart
-Create `btsync.conf` in `/etc/init`
+Run `wget` and download `btsync.conf`:<br>
 ```
-sudo nano /etc/init/btsync.conf
+wget 
+```
+>#### Sidenote: `btsync.conf`
+If you're curious about what `btsync.conf` does, feel free to open it and take a look.<br>
+```
+sudo nano btsync.conf
+```
+
+Move `btsync.conf` to `/etc/init`.
+```
+sudo mv btsync.conf /etc/init
 ```
