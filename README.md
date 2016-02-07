@@ -11,7 +11,7 @@ Instructions and scripts for setting up BitTorrent Sync on Ubuntu Server.
 - [Edit `btsync.conf`](#edit-btsyncconf)
   - [Basic Preferences](#basic-preferences)
     - [Sidenote: `password_hash`](#sidenote-password_hash)
-  - [Advanced Preferences](advanced-preferences)
+  - [Advanced Preferences](#advanced-preferences)
 - [Run `btsync` as `root`](#run-btsync-as-root)
 - [Change Ownership of Files](#change-ownership-of-files)
   - [Sidenote: `chown-btsync.sh`](#sidenote-chown-btsyncsh)
