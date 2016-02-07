@@ -81,7 +81,7 @@ After running the above command, you'll be prompted for a password. Type/paste y
 - These exist at the very bottom of `btsync.conf`. 
 - If you don't get the syntax right for the options in this section, `btsync` won't start properly. 
 - These options have to be explicitly set in `btsync.conf` - changing them through the WebUI requires a restart, and after the restart those settings are lost. 
-  - I'm not sure why, but I think it's because of the way `btsync` and `btsync.conf` are being called, they are overwriting changes made to the `Power User` options through the WebUI.
+  - I'm not sure why, but I think it's because of the way `btsync` and `btsync.conf` are being called, they are overwriting changes made to the "Power User" options through the WebUI.
 
 Add your options below<br>
 `//, "folder_rescan_interval" : "86400"`<br>
