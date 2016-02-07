@@ -48,6 +48,12 @@ If you're curious about what `install-btsync.sh` does, feel free to open it and 
 ```
 sudo nano install-btsync.sh
 ```
+I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out.
+```
+# delete this script when complete
+#rm install-btsync.sh
+```
+`install-btsync.sh` can mess up an in-progress install of BitTorrent Sync if it is accidentally run a second time. For this reason I highly recommend deleting it (either manually or automatically) after it has been run the first time.
 
 Execute `install-btsync.sh`
 ```
@@ -157,16 +163,28 @@ Run `wget` and download `autostart-btsync.sh`:<br>
 ```
 wget https://raw.githubusercontent.com/bendwyer/btsync/master/autostart-btsync.sh
 ```
+Make `autostart-btsync.sh` executable.
+```
+chmod +x autostart-btsync.sh
+```
+
 >#### Sidenote: `autostart-btsync.sh`
 If you're curious about what `autostart-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
 ```
-sudo nano `autostart-btsync.sh`
+sudo nano autostart-btsync.sh
 ```
-If you want to take a look at the `btsync.conf` **Upstart** file that `autostart-btsync.sh` downloads, use `wget`:
+If you want to take a look at the `btsync.conf` **Upstart** file that `autostart-btsync.sh` downloads:
 ```
 wget https://raw.githubusercontent.com/bendwyer/btsync/master/btsync.conf
 ```
+```
+sudo nano btsync.conf
+```
 
+Execute `autostart-btsync.sh`
+```
+sudo sh autostart-btsync.sh
+```
 Check that the `btsync` executable is running as user `btsync`.
 ```
 ps -ef | grep btsync | grep -v grep
