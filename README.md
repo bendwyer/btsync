@@ -2,7 +2,7 @@
 Instructions and scripts for setting up BitTorrent Sync on Ubuntu Server.
 
 ## Table of Contents
-[Disclaimers](disclaimers)<br>
+[Disclaimers](#disclaimers)<br>
 [Background](background)<br>
 [File Locations](file-locations)<br>
 [Getting Started](getting-started)<br>
