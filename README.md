@@ -2,15 +2,24 @@
 Instructions and scripts for setting up BitTorrent Sync on Ubuntu Server.
 
 ## Table of Contents
-[Disclaimers](#disclaimers)<br>
-[Background](#background)<br>
-[File Locations](#file-locations)<br>
-[Getting Started](#getting-started)<br>
-[Edit `btsync.conf`](#edit-btsyncconf)<br>
-[Run `btsync` as `root`](#run-btsync-as-root)<br>
-[Change Ownership of Files](#change-ownership-of-files)<br>
-[Making `btsync` Autostart (Upstart)](#making-btsync-autostart-upstart)<br>
-[Updating `btsync` Automatically](#updating-btsync-automatically)
+- [Disclaimers](#disclaimers)
+- [Background](#background)
+- [File Locations](#file-locations)
+  - [Sidenote: `btsync.conf`](#sidenote-btsyncconf)
+- [Getting Started](#getting-started)
+  - [Sidenote: `install-btsync.sh`](#sidenote-install-btsyncsh)
+- [Edit `btsync.conf`](#edit-btsyncconf)
+  - [Basic Preferences](#basic-preferences)
+    - [Sidenote: `password_hash`](#sidenote-password_hash)
+  - [Advanced Preferences](advanced-preferences)
+- [Run `btsync` as `root`](#run-btsync-as-root)
+- [Change Ownership of Files](#change-ownership-of-files)
+  - [Sidenote: `chown-btsync.sh`](#sidenote-chown-btsyncsh)
+- [Making `btsync` Autostart (Upstart)](#making-btsync-autostart-upstart)
+  - [Sidenote: `autostart-btsync.sh`](#sidenote-autostart-btsyncsh)
+- [Updating `btsync` Automatically](#updating-btsync-automatically)
+  - [Sidenote: `update-btsync.sh`](#sidenote-update-btsyncsh)
+- [Sources](#sources)
 
 ## Disclaimers
 - I am not a Linux expert.<br>
