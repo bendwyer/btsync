@@ -25,6 +25,10 @@ On your fresh Ubuntu Server install, run `wget` and download `install-btsync.sh`
 ```
 wget https://raw.githubusercontent.com/bendwyer/btsync/master/install-btsync.sh
 ```
+Make `install-btsync.sh` executable.
+```
+chmod +x install-btsync.sh
+```
 
 >#### Sidenote: `install-btsync.sh`
 If you're curious about what `install-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
@@ -60,7 +64,7 @@ mkpasswd
 ```
 After running the above command, you'll be prompted for a password. Type/paste your preferred password in, and press `Enter`. If your password is above 8 characters, you'll get a warning about it only accepting the first 8 characters. Copy the output and paste it into the `password_hash` line.
 
-### Advanced preferences
+### Advanced Preferences
 - These exist at the very bottom of `btsync.conf`. 
 - If you don't get the syntax right for the options in this section, `btsync` won't start properly. 
 - These options have to be explicitly set in `btsync.conf` - changing them through the WebUI requires a restart, and after the restart those settings are lost. 
@@ -114,8 +118,29 @@ Exit `root`.
 exit
 ```
 
-## Change Ownership of files
+## Change Ownership of Files
 Run `wget` and download `chown-btsync.sh`:<br>
 ```
 wget https://raw.githubusercontent.com/bendwyer/btsync/master/chown-btsync.sh
+```
+Make `chown-btsync.sh` executable.
+```
+chmod +x chown-btsync.sh
+```
+
+>#### Sidenote: `chown-btsync.sh`
+If you're curious about what `chown-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
+```
+sudo nano chown-btsync.sh
+```
+
+Execute `chown-btsync.sh`
+```
+sudo ./chown-btsync.sh
+```
+
+## Making `btsync` Autostart
+Create `btsync.conf` in `/etc/init`
+```
+sudo nano /etc/init/btsync.conf
 ```
