@@ -41,19 +41,17 @@ Across all of my Sync devices (home and public) I have turned off `use_relay`, `
 `/sync-encrypted` - location for storing encrypted sync folders.<br>
 `/etc/init` - location for the **Upstart** configuration file `btsync.conf`.<br>
 
----
-#### Sidenote: `btsync.conf`
+>#### Sidenote: `btsync.conf`
 I will reference two versions of `btsync.conf` in this README. Only the **Upstart** configuration file is available to download from this repo. The **BitTorrent Sync** configuration file has to be created and edited by hand. For the sake of clarity, I will reiterate the locations of the two files:
 
-**BitTorrent Sync**
+>**BitTorrent Sync**
 ```
 /etc/btsync/btsync.conf
 ```
-**Upstart**
+>**Upstart**
 ```
 /etc/init/btsync.conf
 ```
----
 
 ## Getting Started
 On your fresh Ubuntu Server install, run `wget` and download `install-btsync.sh`:<br>
@@ -65,20 +63,17 @@ Make `install-btsync.sh` executable.
 chmod +x install-btsync.sh
 ```
 
----
-#### Sidenote: `install-btsync.sh`
-If you're curious about what `install-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
+>#### Sidenote: `install-btsync.sh`
+If you're curious about what `install-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.
 ```
 sudo nano install-btsync.sh
 ```
-I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out. Remove the `#` to enable the self-delete command. <br>
+I've included a self-delete command at the beginning of `install-btsync.sh` that will remove the script upon completion. It comes commented out. Remove the `#` to enable the self-delete command.
 ```
 # delete this script when complete
 #rm install-btsync.sh
 ```
 `install-btsync.sh` can mess up an in-progress install of BitTorrent Sync if it is accidentally run a second time. For this reason I highly recommend deleting it (either manually or automatically) after it has been run the first time.
-
----
 
 Execute `install-btsync.sh`
 ```
@@ -102,15 +97,12 @@ Uncomment lines by deleting the `//` at the beginning of each line.
 `password_hash` - change to what you want your hashed password to be and **uncomment**. See below for more information.<br>
 `directory_root` - change to `/sync-encrypted/` and **uncomment**.<br>
 
----
-#### Sidenote: `password_hash`
-To make a hashed password for `btsync.conf`, you have to use `crypt(3)`. This method definitely has its limitations, but at least your password isn't stored in plaintext.<br>
+>#### Sidenote: `password_hash`
+To make a hashed password for `btsync.conf`, you have to use `crypt(3)`. This method definitely has its limitations, but at least your password isn't stored in plaintext.
 ```
 mkpasswd
 ```
 After running the above command, you'll be prompted for a password. Type/paste your preferred password in, and press `Enter`. If your password is above 8 characters, you'll get a warning about it only accepting the first 8 characters. Copy the output and paste it into the `password_hash` line.
-
----
 
 ### Advanced Preferences
 - These exist at the very bottom of `btsync.conf`. 
@@ -176,13 +168,11 @@ Make `chown-btsync.sh` executable.
 chmod +x chown-btsync.sh
 ```
 
----
-#### Sidenote: `chown-btsync.sh`
-If you're curious about what `chown-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
+>#### Sidenote: `chown-btsync.sh`
+If you're curious about what `chown-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.
 ```
 sudo nano chown-btsync.sh
 ```
----
 
 Execute `chown-btsync.sh`
 ```
@@ -199,9 +189,8 @@ Make `autostart-btsync.sh` executable.
 chmod +x autostart-btsync.sh
 ```
 
----
-#### Sidenote: `autostart-btsync.sh`
-If you're curious about what `autostart-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
+>#### Sidenote: `autostart-btsync.sh`
+If you're curious about what `autostart-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.
 ```
 sudo nano autostart-btsync.sh
 ```
@@ -212,7 +201,6 @@ wget https://raw.githubusercontent.com/bendwyer/btsync/master/btsync.conf
 ```
 sudo nano btsync.conf
 ```
----
 
 Execute `autostart-btsync.sh`
 ```
@@ -241,13 +229,11 @@ Make `update-btsync.sh` executable.
 chmod +x update-btsync.sh
 ```
 
----
-#### Sidenote: `update-btsync.sh`
-If you're curious about what `update-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
+>#### Sidenote: `update-btsync.sh`
+If you're curious about what `update-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.
 ```
 sudo nano update-btsync.sh
 ```
----
 
 When a new version of BitTorrent Sync is available, execute `update-btsync.sh`.
 ```
