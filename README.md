@@ -153,24 +153,20 @@ sudo sh chown-btsync.sh
 ```
 
 ## Making `btsync` Autostart (Upstart)
-Run `wget` and download `btsync.conf`:<br>
+Run `wget` and download `autostart-btsync.sh`:<br>
+```
+wget https://raw.githubusercontent.com/bendwyer/btsync/master/autostart-btsync.sh
+```
+>#### Sidenote: `autostart-btsync.sh`
+If you're curious about what `autostart-btsync.sh` does, feel free to open it and take a look. I've included descriptions of what the commands are doing inside the script.<br>
+```
+sudo nano `autostart-btsync.sh`
+```
+If you want to take a look at the `btsync.conf` **Upstart** file that `autostart-btsync.sh` downloads, use `wget`:
 ```
 wget https://raw.githubusercontent.com/bendwyer/btsync/master/btsync.conf
 ```
->#### Sidenote: `btsync.conf`
-If you're curious about what `btsync.conf` does, feel free to open it and take a look.<br>
-```
-sudo nano btsync.conf
-```
 
-Move `btsync.conf` to `/etc/init`.
-```
-sudo mv btsync.conf /etc/init
-```
-Test starting the service.
-```
-sudo service btsync start
-```
 Check that the `btsync` executable is running as user `btsync`.
 ```
 ps -ef | grep btsync | grep -v grep
