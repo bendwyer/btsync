@@ -1,7 +1,7 @@
 # btsync
 Instructions and scripts for setting up BitTorrent Sync on Ubuntu Server.
 
-Project repository can be found here: https://github.com/bendwyer/btsync
+Project repository can be found here: <a href=https://github.com/bendwyer/btsync target="_blank">https://github.com/bendwyer/btsync</a>
 
 ## Table of Contents
 - [Disclaimers](#disclaimers)
