@@ -146,8 +146,15 @@ Start `btsync`.
 ```
 btsync --config /etc/btsync/btsync.conf --log /var/log/btsync.log
 ```
-`btsync` should start successfully and specify a PID.
+`btsync` should start successfully with a EULA message and specify a PID.
 ```
+By using this application, you agree to our Privacy Policy, Terms of Use and End User License Agreement.
+https://www.getsync.com/legal/privacy
+https://www.getsync.com/legal/terms-of-use
+https://www.getsync.com/legal/eula
+
+Webui is listening on 0.0.0.0:8888
+BitTorrent Sync forked to background. pid = 15612
 ```
 Stop `btsync`.
 ```
